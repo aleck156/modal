@@ -6,30 +6,27 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnOpenModal = document.querySelectorAll('.show-modal');
 
-const toggleHidden = function (objectName) {
-  objectName.classList.toggle('hidden');
+const toggleHidden = function () {
+  modal.classList.toggle('hidden');
+  overlay.classList.toggle('hidden');
 };
 
 btnOpenModal.forEach(element => {
   element.addEventListener('click', () => {
-    toggleHidden(modal);
-    toggleHidden(overlay);
+    toggleHidden();
   });
 });
 
 overlay.addEventListener('click', () => {
-  toggleHidden(modal);
-  toggleHidden(overlay);
+  toggleHidden();
 });
 
 btnCloseModal.addEventListener('click', () => {
-  toggleHidden(modal);
-  toggleHidden(overlay);
+  toggleHidden();
 });
 
 document.onkeydown = function (evt) {
   if (evt.key === 'Escape' && !overlay.classList.contains('hidden')) {
-    toggleHidden(modal);
-    toggleHidden(overlay);
+    toggleHidden();
   }
 };
