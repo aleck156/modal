@@ -12,18 +12,12 @@ const toggleHidden = function () {
 };
 
 btnOpenModal.forEach(element => {
-  element.addEventListener('click', () => {
-    toggleHidden();
-  });
+  element.addEventListener('click', toggleHidden);
 });
 
-overlay.addEventListener('click', () => {
-  toggleHidden();
-});
+overlay.addEventListener('click', toggleHidden);
 
-btnCloseModal.addEventListener('click', () => {
-  toggleHidden();
-});
+btnCloseModal.addEventListener('click', toggleHidden);
 
 document.onkeydown = function (evt) {
   if (evt.key === 'Escape' && !overlay.classList.contains('hidden')) {
